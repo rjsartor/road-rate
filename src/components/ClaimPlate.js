@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { API_BASE_URL } from '../config';
-import PagesNav from './pages-nav';
+import PagesNav from './PagesNav';
 import '../styles/plates/claim-plate.css';
 
 export const ClaimPlate = () => {

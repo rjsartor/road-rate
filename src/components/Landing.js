@@ -1,21 +1,10 @@
 import React from 'react';
-import LandingNav from './landing-nav';
-import ReviewList from './review-list';
-import About from './about.js';
+import LandingNav from './LandingNav';
+import ReviewList from './ReviewList';
+import About from './About.js';
 import '../styles/pages/landing.css';
 
 export const LandingPage = () => {
-
-    // const accessToken = localStorage.getItem('accessToken');
-    // const navigate = useNavigate();
-
-    // console.log('accessToken', accessToken)
-
-    // if (accessToken) {
-    //   console.log('should nav')
-    //   navigate('/dashboard');
-    // }
-
     return (
       <main className="home">
         <section className="landing-top">

@@ -3,7 +3,7 @@ import React, { useState, useEffect }  from 'react';
 import {API_BASE_URL} from '../config';
 import MaterialIcon from 'material-icons-react'; 
 import OwnerResponseForm from './owner-response-form';
-import PagesNav from './pages-nav';
+import PagesNav from './PagesNav';
 import '../styles/plates/single-plate.css';
 
 export const MyPlate = () => {

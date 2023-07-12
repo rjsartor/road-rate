@@ -2,7 +2,7 @@ import React, { useState, useEffect }  from 'react';
 import {API_BASE_URL} from '../config';
 import MaterialIcon from 'material-icons-react';
 import Spinner from 'react-spinkit';
-import PagesNav from './pages-nav';
+import PagesNav from './PagesNav';
 import '../styles/plates/public-plate.css';
 
 export const PublicPlate = () => {

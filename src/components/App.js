@@ -1,42 +1,40 @@
 import React from 'react';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import LandingPage from './landing-page';
-import Dashboard from './dashboard';
-import LoginForm from './login-form';
-import ClaimPlate from './claim-plate';
-import PublicPlate from './public-plate';
-import MyPlatesList from './my-plates-list';
-import MyPlate from './my-plate';
-import About from './about';
-import MyReviews from './my-reviews';
+import LandingPage from './Landing';
+import Dashboard from './Dashboard';
+import LoginForm from './LoginForm';
+import ClaimPlate from './ClaimPlate';
+import PublicPlate from './PublicPlate';
+import MyPlatesList from './MyPlates';
+import MyPlate from './MyPlate';
+import About from './About';
+import MyReviews from './MyReviews';
 import '../styles/App.css';
 
 import { Auth0Provider } from "../auth/Auth0Provider";
 
-export const App = () => {
-  const routes = createRoutesFromElements(
-    <Route element={<Auth0Provider /> }>
-        <Route path="/" element={<LandingPage />} />
-        {/* <Route path="/register" element={<RegistrationPage />} /> */}
-        <Route 
-            path="/dashboard" 
-            element={<Dashboard />}
-        /> 
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/plate" element={<PublicPlate />} />
-        <Route path="/plate/id/:id" element={<PublicPlate />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/claim-plate" element={<ClaimPlate />} />
-        <Route path="/my-plates" element={<MyPlatesList />} /> 
-        <Route path="/my-plates/id/:id" element={<MyPlate />} />
-        <Route path="/my-reviews" element={<MyReviews />} />
-    </Route>
-  );    
-  const router = createBrowserRouter(routes);
-  
-  return (
-    <RouterProvider router={router} />
-  )
-}
+const routesArray = [
+  { path: "/", element: <LandingPage /> },
+  // { path: "/register", element: <RegistrationPage /> },
+  { path: "/dashboard", element: <Dashboard /> },
+  { path: "/login", element: <LoginForm /> },
+  { path: "/plate", element: <PublicPlate /> },
+  { path: "/plate/id/:id", element: <PublicPlate /> },
+  { path: "/about", element: <About /> },
+  { path: "/claim-plate", element: <ClaimPlate /> },
+  { path: "/my-plates", element: <MyPlatesList /> },
+  { path: "/my-plates/id/:id", element: <MyPlate /> },
+  { path: "/my-reviews", element: <MyReviews /> }
+];
 
-export default App;
+const routes = createRoutesFromElements(
+  <Route element={<Auth0Provider /> }>
+    {routesArray.map((route, index) => (
+      <Route key={index} path={route.path} element={route.element} />
+    ))}
+  </Route>
+);
+
+const router = createBrowserRouter(routes);
+
+export const App = () => (<RouterProvider router={router} />);

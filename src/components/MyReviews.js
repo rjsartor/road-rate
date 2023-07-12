@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from 'react'; 
 import {API_BASE_URL} from '../config';
 import MaterialIcon from 'material-icons-react';
-import PagesNav from './pages-nav';
+import PagesNav from './PagesNav';
 import '../styles/reviews/my-reviews.css';
 
 export const MyReviews = () => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from 'react'; 
 import {API_BASE_URL} from '../config';
 import { useNavigate } from 'react-router-dom';
-import PagesNav from './pages-nav';
+import PagesNav from './PagesNav';
 import '../styles/plates/my-plates-list.css'
 
 export const MyPlatesList = () => {
